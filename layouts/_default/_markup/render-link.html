@@ -1,0 +1,19 @@
+{{- $external := strings.HasPrefix .Destination "http" -}}
+{{- $anchor := strings.HasPrefix .Destination "#" -}}
+<a
+  href="{{ .Destination | safeURL }}"
+  {{ with .Title}} title="{{ . }}"{{ end }}
+  {{ if $anchor }}
+    class="is-anchor"
+  {{ else if $external }}
+    target="_blank"
+    rel="noopener"
+  {{ end }}
+>
+  {{- .Text | safeHTML -}}
+  {{- if $external -}}
+    <span class="align-text-top mx-1 relative text-xs icon" aria-label="(opens in new window)">
+      {{- partial "icons/action/open_in_new.svg" -}}
+    </span>
+  {{- end -}}
+</a>

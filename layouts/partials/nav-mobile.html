@@ -1,0 +1,28 @@
+<details class="md:hidden relative">
+  <summary>Menu</summary>
+  <nav class="absolute right-0 bg-white border-2 text-sm rounded-md">
+    {{ $currentPage := . }}
+    {{ with ((site.GetPage "section" "settings").Resources.GetMatch "navigation.md") }}
+      {{ range .Params.main }}
+        {{ if eq .type "page" }}
+          {{ with (site.GetPage .page) }}
+            <a href="{{ .RelPermalink }}" class="block px-3 py-2{{ if eq $currentPage.RelPermalink .RelPermalink }} active{{ end }}">
+              {{- .LinkTitle -}}
+            </a>
+          {{ end }}
+        {{ end }}
+
+        {{ if eq .type "custom" }}
+          <a href="{{ .url }}" class="block px-3 py-2" target="{{ if .external }}_blank{{ end }}">
+            {{- .linktitle -}}
+            {{- if .external -}}
+              <span class="ml-2 align-baseline text-xs icon" aria-label="(opens in new window)">
+                {{- partial "icons/action/open_in_new.svg" -}}
+              </span>
+            {{- end -}}
+          </a>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </nav>
+</details>

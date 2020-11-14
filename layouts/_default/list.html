@@ -1,0 +1,22 @@
+{{ define "main" }}
+  {{ if .IsHome }}
+    <div class="grid place-content-center text-center" style="font-size:1.333em;min-height:calc(100vh - 8rem);">
+  {{ else }}
+    <div>
+  {{ end }}
+    <h1 class="max-w-screen-md mx-auto my-0 px-6 py-4">{{.Title}}</h1>
+  </div>
+  <div class="max-w-screen-md mx-auto px-6 py-4">
+    {{ with .Content }}
+      <div class="my-8">
+        {{- . -}}
+      </div>
+    {{ end }}
+    {{ range .Pages }}
+      <article>
+        <h3><a href="{{.Permalink}}">{{.Title}}</a></h3>
+        <p>{{ .Summary }}</p>
+      </article>
+    {{ end }}
+  </div>
+{{ end }}

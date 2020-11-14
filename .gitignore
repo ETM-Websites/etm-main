@@ -1,0 +1,8 @@
+.DS_Store
+.env
+.netlify
+deploy
+node_modules/
+public/
+resources/
+hugo_stats.json

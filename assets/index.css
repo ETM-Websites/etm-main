@@ -1,0 +1,24 @@
+@import "normalize/_index.css";
+@import "base/_index.css";
+/* @import "tailwindcss/components"; */
+@import "tailwindcss/utilities";
+
+pre {
+  background-color: whitesmoke;
+  padding: 1rem;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: pre-wrap;
+}
+
+svg {
+  fill: currentColor;
+}
+
+.icon > svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  max-width: 100%;
+  max-height: 100%;
+}

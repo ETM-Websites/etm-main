@@ -1,0 +1,14 @@
+<footer class="max-w-screen-md mx-auto px-6 py-4">
+    <div>
+        {{- partial "contact-form" -}}
+    </div>
+    <div class="mt-4">
+        <section class="text-center text-sm">{{ .Site.Title }} &copy; {{ .Date.Format "2006" }}</section>
+        <nav class="hidden">
+            <a href="{{ .Site.BaseURL }}">Latest Posts</a>
+            {{ if .Site.Params.facebook }}<a href="{{ .Site.Params.facebook }}" target="_blank" rel="noopener">Facebook</a>{{ end }}
+            {{ if .Site.Params.twitter }}<a href="{{ .Site.Params.twitter }}" target="_blank" rel="noopener">Twitter</a>{{ end }}
+            {{ if .Site.Params.github }}<a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">Github</a>{{ end }}
+        </nav>
+    </div>
+</footer>

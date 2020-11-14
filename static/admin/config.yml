@@ -1,0 +1,75 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+# when using the default proxy server port
+local_backend: true
+
+media_folder: "/content/media" # Media files will be stored in the repo under /content/media
+public_folder: "/media" # The src attribute for uploaded media will begin with /media
+
+collections:
+  - name: "page" # Used in routes, ie.: /admin/collections/:slug/edit
+    create: true # Allow users to create new documents in this collection
+    folder: "content" # The path to the folder where the documents are stored
+    label: "Pages" # Used in the UI, ie.: "New Post"
+    label_singular: "Page"
+    fields: # The fields each document in this collection have
+      - {
+        label: "Title",
+        name: "title",
+        widget: "string",
+        hint: "This is your page title."
+      }
+      - {
+        label: "Summary",
+        name: "summary",
+        widget: "text",
+        required: false,
+        hint: "Provide a snippet for SEO & social meta tags information. If nothing is provided it will use the first 70 words of the content."
+      }
+      - {
+        label: "Image",
+        name: "image",
+        widget: "image",
+        required: false,
+        hint: ""
+      }
+      - {
+        label: "Body",
+        name: "body",
+        widget: "markdown"
+      }
+  - name: "settings" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Settings" # Used in the UI, ie.: "New Post"
+    files:
+      - name: "navigation"
+        file: "content/settings/navigation.md"
+        label: "Navigation"
+        fields:
+          - label: "Main"
+            name: "main"
+            widget: "list"
+            default: []
+            label_singular: "Menu"
+            types:
+              - label: 'Page'
+                name: 'page'
+                widget: object
+                summary: '{{ fields.page }}'
+                fields:
+                  - label: "Page"
+                    name: "page"
+                    widget: "relation"
+                    collection: "page"
+                    search_fields: ["title"]
+                    value_field: "{{slug}}"
+                    display_fields: ["title"]
+              - label: 'Custom Link'
+                name: 'custom'
+                widget: object
+                summary: '{{ fields.name }}'
+                fields:
+                  - { label: "Title", name: "linktitle", widget: "string" }
+                  - { label: "Url", name: "url", widget: "string" }
+                  - { label: "Open in New Window", name: "external", widget: "boolean", default: true }
