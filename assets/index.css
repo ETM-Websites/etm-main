@@ -3,6 +3,10 @@
 /* @import "tailwindcss/components"; */
 @import "tailwindcss/utilities";
 
+html {
+  scroll-padding-top: 6rem;
+}
+
 pre {
   background-color: whitesmoke;
   padding: 1rem;
