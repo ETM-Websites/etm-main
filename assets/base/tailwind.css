@@ -72,7 +72,7 @@
   img {
     border-style: solid;
     position: relative;
-    z-index: 0;
+    z-index: 1;
   }
   
   textarea {
