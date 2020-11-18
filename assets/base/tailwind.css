@@ -69,6 +69,11 @@
     * https://github.com/tailwindcss/tailwindcss/issues/362
     */
   
+
+  /**
+    * Image applies position:relativee & webkit-transform to raise above the navbar overlay
+    */
+
   img {
     border-style: solid;
     position: relative;
