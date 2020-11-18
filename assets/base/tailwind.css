@@ -71,6 +71,7 @@
   
   img {
     border-style: solid;
+    position: relative;
   }
   
   textarea {

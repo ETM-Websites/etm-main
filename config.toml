@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "Hugo Sandbox"
+title = "ETM Websites"
 relativeurls = false
 
 [permalinks]

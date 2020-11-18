@@ -1,17 +1,17 @@
-<nav class="hidden md:flex text-sm">
+<nav class="hidden md:flex text-xs px-2">
   {{ $currentPage := . }}
   {{ with ((site.GetPage "section" "settings").Resources.GetMatch "navigation.md") }}
     {{ range .Params.main }}
       {{ if eq .type "page" }}
         {{ with (site.GetPage .page) }}
-          <a href="{{ .RelPermalink }}" class="inline-flex text-gray-800 px-3 py-2{{ if eq $currentPage.RelPermalink .RelPermalink }} active{{ end }}">
+          <a href="{{ .RelPermalink }}" class="inline-flex text-gray-800 p-2{{ if eq $currentPage.RelPermalink .RelPermalink }} active{{ end }}">
             {{- .LinkTitle -}}
           </a>
         {{ end }}
       {{ end }}
 
       {{ if eq .type "custom" }}
-        <a href="{{ .url }}" class="inline-flex text-gray-800 px-3 py-2" target="{{ if .external }}_blank{{ end }}">
+        <a href="{{ .url }}" class="inline-flex text-gray-800 p-2" target="{{ if .external }}_blank{{ end }}">
           {{- .linktitle -}}
           {{- if .external -}}
             <span class="ml-1 self-center inline-flex text-xs icon" aria-label="(opens in new window)">

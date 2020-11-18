@@ -1,6 +1,9 @@
 {{ define "main" }}
   {{ if .IsHome }}
-    <div class="grid place-content-center text-center" style="font-size:1.333em;min-height:calc(100vh - 8rem);">
+    <div
+      class="bg-center bg-cover bg-no-repeat grid min-h-screen place-content-center relative text-center text-white z-10"
+      style="font-size:1.333em;background-image:url(https://images.unsplash.com/photo-1571610783729-f571bd44c646?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2251&q=80)"
+    >
   {{ else }}
     <div>
   {{ end }}
