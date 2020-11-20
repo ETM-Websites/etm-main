@@ -1,0 +1,42 @@
+.hide-marker { list-style: none; }
+.hide-marker::-webkit-details-marker { display: none; }
+
+.summary-icon:before,
+.summary-icon:after,
+.summary-icon__line {
+  height: 1px;
+  background-color: currentColor;
+  position: absolute;
+  transition-duration: 0.15s;
+  transition-property: transform;
+}
+
+.summary-icon:before,
+.summary-icon:after {
+  content: "";
+  width: 70%;
+}
+
+.summary-icon:before {
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+}
+
+.summary-icon:after {
+  bottom: 0;
+  right: 0;
+  transform-origin: bottom right;
+}
+
+[open] > summary > .summary-icon > .summary-icon__line {
+  transform: rotate(-45deg);
+}
+
+[open] > summary > .summary-icon:before {
+  transform: translateX(3px) rotate(45deg);
+}
+
+[open] > summary > .summary-icon:after {
+  transform: translateX(-4px) rotate(45deg);
+}

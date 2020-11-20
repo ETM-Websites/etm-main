@@ -1,6 +1,7 @@
 @import "normalize/_index.css";
 @import "base/_index.css";
 /* @import "tailwindcss/components"; */
+@import "details-menu.css";
 @import "tailwindcss/utilities";
 
 html {
