@@ -34,9 +34,9 @@
 }
 
 [open] > summary > .summary-icon:before {
-  transform: translateX(3px) rotate(45deg);
+  transform: translate(3px, 0px) rotate(45deg);
 }
 
 [open] > summary > .summary-icon:after {
-  transform: translateX(-4px) rotate(45deg);
+  transform: translate(-3px, 1px) rotate(45deg);
 }
