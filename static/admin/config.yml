@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo: ETM-Websites/etm-main
   branch: master # Branch to update (optional; defaults to master)
   identity_url: https://etm-websites.netlify.com/.netlify/identity
   gateway_url: https://etm-websites.netlify.com/.netlify/git
