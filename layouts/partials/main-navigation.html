@@ -17,7 +17,13 @@
         {{ end }}
 
         {{ if eq .type "custom" }}
-          <a href="{{ .url }}" class="block sm:inline-block px-4 py-2 text-gray-800 sm:px-2" target="{{ if .external }}_blank{{ end }}">
+          <a href="{{ .url }}"
+            class="block sm:inline-block px-4 py-2 text-gray-800 sm:px-2"
+            {{ if .external }}
+              target="_blank"
+              rel="noopener"
+            {{ end }}
+          >
             {{- .linktitle -}}
             {{- if .external -}}
               {{- partial "external-link-icon.html" -}}
