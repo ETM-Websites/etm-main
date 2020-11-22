@@ -1,8 +1,5 @@
 const themeDir = __dirname + '';
 const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano')({
-  preset: 'default'
-});
 
 const purgecss = require('@fullhuman/postcss-purgecss')({
   content: [ './hugo_stats.json' ],
@@ -18,7 +15,7 @@ module.exports = {
     require('tailwindcss')(themeDir + '/tailwind.config.js'),
     require('postcss-nesting'),
     ...process.env.HUGO_ENVIRONMENT === 'production'
-      ? [autoprefixer, cssnano, purgecss]
+      ? [autoprefixer, purgecss]
       : []
   ]
 }
