@@ -1,6 +1,8 @@
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
+  identity_url: https://etm-websites.netlify.com/.netlify/identity
+  gateway_url: https://etm-websites.netlify.com/.netlify/git
 
 # when using the default proxy server port
 local_backend: true
