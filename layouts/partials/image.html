@@ -40,8 +40,16 @@
   {{ end }}
 {{ end }}
 
-{{ if gt (len $srcset) 0 }}
-  <img class="w-full" alt="{{ .alt }}" src="{{ $src }}" loading="{{ .loading }}" srcset="{{ delimit $srcset ", " }}" />
-{{ else }}
-  <img class="w-full" alt="{{ .alt }}" src="{{ $src }}" loading="{{ .loading }}" />
-{{ end }}
+<img
+  class="w-full"
+  alt="{{ .alt }}"
+  src="{{ $src }}"
+  width="{{ $image.Width }}"
+  height="{{ $image.Height }}"
+  {{- if .loading -}}
+    loading="{{ .loading }}"
+  {{- end -}}
+  {{- if gt (len $srcset) 0 -}}
+    srcset="{{ delimit $srcset ", " }}"
+  {{- end -}}
+/>
