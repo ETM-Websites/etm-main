@@ -1,19 +1,21 @@
-<footer class="max-w-screen-md mx-auto px-6 py-4">
-    <div>
-        {{- partial "contact-form" -}}
-    </div>
-    <div class="mt-4">
-        <section class="text-center text-sm">{{ .Site.Title }} &copy; {{ dateFormat "2006" now }}</section>
-        <nav class="hidden">
-            <a href="{{ .Site.BaseURL }}">Latest Posts</a>
-            {{ if .Site.Params.facebook }}<a href="{{ .Site.Params.facebook }}" target="_blank" rel="noopener">Facebook</a>{{ end }}
-            {{ if .Site.Params.twitter }}<a href="{{ .Site.Params.twitter }}" target="_blank" rel="noopener">Twitter</a>{{ end }}
-            {{ if .Site.Params.github }}<a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">Github</a>{{ end }}
-        </nav>
+<footer class="bg-gray-50 border-t-2 mt-14 sm:mt-20">
+    <div class="max-w-screen-md mx-auto px-6 py-4">
+        <div>
+            {{- partial "contact-form" -}}
+        </div>
+        <div class="mt-4">
+            <section class="text-center text-xs">{{ .Site.Title }} &copy; {{ dateFormat "2006" now }}</section>
+            <nav class="hidden">
+                <a href="{{ .Site.BaseURL }}">Latest Posts</a>
+                {{ if .Site.Params.facebook }}<a href="{{ .Site.Params.facebook }}" target="_blank" rel="noopener">Facebook</a>{{ end }}
+                {{ if .Site.Params.twitter }}<a href="{{ .Site.Params.twitter }}" target="_blank" rel="noopener">Twitter</a>{{ end }}
+                {{ if .Site.Params.github }}<a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">Github</a>{{ end }}
+            </nav>
+        </div>
     </div>
 </footer>
 
 {{/*  TODO: Add site setting  */}}
-{{ if .IsHome }}
+{{- if .IsHome -}}
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-{{ end }}
+{{- end -}}

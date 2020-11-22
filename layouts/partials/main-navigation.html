@@ -1,23 +1,23 @@
-<details class="sm:hidden relative">
-  <summary class="hide-marker px-4 py-2">
+<details class="relative">
+  <summary class="sm:hidden hide-marker px-4 py-2">
     <span class="icon mr-1 text-lg inline-block open:hidden">{{- partial "icons/navigation/menu.svg" -}}</span>
     <span class="icon mr-1 text-lg hidden open:inline-block">{{- partial "icons/navigation/close.svg" -}}</span>
     Menu
   </summary>
-  <nav class="-mt-1 absolute bg-white border-2 mr-1.5 py-2 right-0 rounded-md shadow">
+  <nav class="-mt-1 sm:mt-0 absolute sm:relative bg-white border-2 sm:border-0 mr-1.5 sm:mr-0 py-2 sm:py-0 right-0 rounded-md shadow sm:shadow-none sm:text-sm lg:text-xs px-2">
     {{ $currentPage := . }}
     {{ with ((site.GetPage "section" "settings").Resources.GetMatch "navigation.md") }}
       {{ range .Params.main }}
         {{ if eq .type "page" }}
           {{ with (site.GetPage .page) }}
-            <a href="{{ .RelPermalink }}" class="block px-4 py-2{{ if eq $currentPage.RelPermalink .RelPermalink }} active{{ end }}">
+            <a href="{{ .RelPermalink }}" class="block sm:inline-block px-4 py-2 text-gray-800 sm:px-2{{ if eq $currentPage.RelPermalink .RelPermalink }} active{{ end }}">
               {{- .LinkTitle -}}
             </a>
           {{ end }}
         {{ end }}
 
         {{ if eq .type "custom" }}
-          <a href="{{ .url }}" class="block px-4 py-2" target="{{ if .external }}_blank{{ end }}">
+          <a href="{{ .url }}" class="block sm:inline-block px-4 py-2 text-gray-800 sm:px-2" target="{{ if .external }}_blank{{ end }}">
             {{- .linktitle -}}
             {{- if .external -}}
               {{- partial "external-link-icon.html" -}}
