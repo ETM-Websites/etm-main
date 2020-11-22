@@ -26,7 +26,7 @@ html {
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: clamp(1em, ((100vw - 37.5em) / 640) * 5 + 1em, 1.3125em);
-  letter-spacing: 0.01875em;
+  /* letter-spacing: 0.01875em; */
   line-height: 1.5;
   text-rendering: optimizeLegibility;
 }
