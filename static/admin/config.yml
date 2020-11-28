@@ -42,6 +42,8 @@ collections:
       }
   - name: "settings" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Settings" # Used in the UI, ie.: "New Post"
+    editor:
+      preview: false
     files:
       - name: "navigation"
         file: "content/settings/navigation.md"
