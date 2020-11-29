@@ -75,3 +75,6 @@ collections:
                   - { label: "Title", name: "linktitle", widget: "string" }
                   - { label: "Url", name: "url", widget: "string" }
                   - { label: "Open in New Window", name: "external", widget: "boolean", default: true }
+      - name: "global"
+        file: "content/settings/global.md"
+        label: "Global"
