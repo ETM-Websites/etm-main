@@ -1,3 +1,3 @@
 ---
-favicon: /media/sourcefiles-01.png
+favicon: /media/favicon.png
 ---
