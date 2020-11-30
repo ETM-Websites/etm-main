@@ -78,3 +78,9 @@ collections:
       - name: "global"
         file: "content/settings/global.md"
         label: "Global"
+        fields:
+          - label: "Favicon"
+            name: "favicon"
+            widget: "image"
+            required: false
+            hint: "Image should be a transparent square png that's at least 270x270."
