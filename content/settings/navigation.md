@@ -9,4 +9,6 @@ main:
     external: true
     linktitle: Google
     url: https://www.google.com
+  - type: page
+    page: content-test
 ---
