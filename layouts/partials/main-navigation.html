@@ -8,9 +8,11 @@
     {{ $currentPage := . }}
     {{ with ((site.GetPage "section" "settings").Resources.GetMatch "navigation.md") }}
       {{ range .Params.main }}
+        {{ $classes := "block sm:inline-block px-4 py-2 text-gray-800 sm:px-2" }}
+        
         {{ if eq .type "page" }}
           {{ with (site.GetPage .page) }}
-            <a href="{{ .RelPermalink }}" class="block sm:inline-block px-4 py-2 text-gray-800 sm:px-2{{ if eq $currentPage.RelPermalink .RelPermalink }} active{{ end }}">
+            <a href="{{ .RelPermalink }}" class="{{ $classes }}{{ if eq $currentPage.RelPermalink .RelPermalink }} active{{ end }}">
               {{- .LinkTitle -}}
             </a>
           {{ end }}
@@ -18,7 +20,7 @@
 
         {{ if eq .type "custom" }}
           <a href="{{ .url }}"
-            class="block sm:inline-block px-4 py-2 text-gray-800 sm:px-2"
+            class="{{ $classes }}"
             {{ if .external }}
               target="_blank"
               rel="noopener"
