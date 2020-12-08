@@ -14,7 +14,9 @@ function checkHiddenSummaries() {
 
 document.addEventListener('readystatechange', () => {
   if (document.readyState === 'complete') {
-    checkHiddenSummaries();
+    // allow window to process styles before triggering check
+    // otherwise, mobile safari will load an expanded menu most of the time
+    window.requestAnimationFrame(checkHiddenSummaries);
   }
 });
 
