@@ -1,5 +1,5 @@
-{{/*  get global settings  */}}
-{{ with ((site.GetPage "section" "settings").Resources.GetMatch "global.md") }}
+{{/*  get identity settings  */}}
+{{ with ((site.GetPage "section" "settings").Resources.GetMatch "identity.md") }}
   {{/*  get favicon parameter  */}}
   {{ with .Params.favicon }}
     {{/* get file that matches the filename */}}

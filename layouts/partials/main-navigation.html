@@ -6,10 +6,12 @@
   </summary>
   <nav class="-mt-1 sm:mt-0 absolute sm:relative bg-white border-2 sm:border-0 mr-1.5 sm:mr-0 py-2 sm:py-0 right-0 rounded-md shadow sm:shadow-none sm:text-sm lg:text-xs px-2">
     {{ $currentPage := . }}
-    {{ with ((site.GetPage "section" "settings").Resources.GetMatch "navigation.md") }}
-      {{ range .Params.main }}
-        {{ $classes := "block sm:inline-block px-4 py-2 text-gray-800 sm:px-2" }}
-        
+    {{ with ((site.GetPage "section" "settings").Resources.GetMatch "main-navigation.md") }}
+      {{ $classes := "block sm:inline-block py-2" }}
+      
+      {{ range .Params.menu }}
+        {{ $classes := (printf "%s%s" $classes " px-4 text-gray-800 sm:px-2" ) }}
+
         {{ if eq .type "page" }}
           {{ with (site.GetPage .page) }}
             <a href="{{ .RelPermalink }}" class="{{ $classes }}{{ if eq $currentPage.RelPermalink .RelPermalink }} active{{ end }}">
@@ -21,15 +23,22 @@
         {{ if eq .type "custom" }}
           <a href="{{ .url }}"
             class="{{ $classes }}"
-            {{ if .external }}
-              target="_blank"
-              rel="noopener"
-            {{ end }}
+            {{- if .external -}}
+              target="_blank" rel="noopener"
+            {{- end -}}
           >
             {{- .linktitle -}}
             {{- if .external -}}
               {{- partial "external-link-icon.html" -}}
             {{- end -}}
+          </a>
+        {{ end }}
+      {{ end }}
+
+      {{ with .Params.cta }}        
+        {{ with (site.GetPage .) }}
+          <a href="{{ .RelPermalink }}" class="{{ $classes }} btn btn-primary mt-2 sm:ml-2 sm:mt-0">
+            {{- .LinkTitle -}}
           </a>
         {{ end }}
       {{ end }}

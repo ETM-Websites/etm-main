@@ -1,14 +1,15 @@
 ---
 headless: true
-main:
+menu:
   - type: page
     page: about
   - type: page
     page: typography
+  - type: page
+    page: content-test
   - type: custom
     external: true
     linktitle: Google
     url: https://www.google.com
-  - type: page
-    page: content-test
+cta: contact
 ---

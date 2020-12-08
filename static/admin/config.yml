@@ -15,50 +15,47 @@ collections:
     label: "Pages" # Used in the UI, ie.: "New Post"
     label_singular: "Page"
     fields: # The fields each document in this collection have
-      - {
-        label: "Title",
-        name: "title",
-        widget: "string",
+      - label: "Title"
+        name: "title"
+        widget: "string"
         hint: "This is your page title."
-      }
-      - {
-        label: "Summary",
-        name: "summary",
-        widget: "text",
-        required: false,
+      - label: "Link Title"
+        name: "linktitle"
+        widget: "string"
+        hint: "Overwrite the title when linked to this page. Such as main or footer navigation menus."
+      - label: "Summary"
+        name: "summary"
+        widget: "text"
+        required: false
         hint: "Provide a snippet for SEO & social meta tags information. If nothing is provided it will use the first 70 words of the content."
-      }
-      - {
-        label: "Image",
-        name: "image",
-        widget: "image",
-        required: false,
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        required: false
         hint: ""
-      }
-      - {
-        label: "Body",
-        name: "body",
+      - label: "Body"
+        name: "body"
         widget: "markdown"
-      }
   - name: "settings" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Settings" # Used in the UI, ie.: "New Post"
     editor:
       preview: false
     files:
-      - name: "navigation"
-        file: "content/settings/navigation.md"
-        label: "Navigation"
+      - name: "main-navigation"
+        file: "content/settings/main-navigation.md"
+        label: "Main Navigation"
         fields:
-          - label: "Main"
-            name: "main"
+          - label: "Menu"
+            name: "menu"
             widget: "list"
             default: []
             label_singular: "Menu"
+            summary: "linktitle"
             types:
               - label: 'Page'
                 name: 'page'
                 widget: object
-                summary: '{{ fields.page }}'
+                summary: '{{ fields.linktitle }}'
                 fields:
                   - label: "Page"
                     name: "page"
@@ -70,17 +67,31 @@ collections:
               - label: 'Custom Link'
                 name: 'custom'
                 widget: object
-                summary: '{{ fields.name }}'
+                summary: '{{ fields.linktitle }}'
                 fields:
                   - { label: "Title", name: "linktitle", widget: "string" }
                   - { label: "Url", name: "url", widget: "string" }
                   - { label: "Open in New Window", name: "external", widget: "boolean", default: true }
-      - name: "global"
-        file: "content/settings/global.md"
-        label: "Global"
+          - label: "Call to Action"
+            name: "cta"
+            widget: "relation"
+            collection: "page"
+            search_fields: ["title"]
+            value_field: "{{slug}}"
+            display_fields: ["title"]
+            required: false
+            hint: "Select a page for menu prominence"
+      - name: "identity"
+        file: "content/settings/identity.md"
+        label: "Identity"
         fields:
           - label: "Favicon"
             name: "favicon"
             widget: "image"
             required: false
-            hint: "Image should be a transparent square png that's at least 270x270."
+            hint: "A favicon is a small square icon displayed in a browser tab for easy identification. Image should be a transparent square png that's at least 270x270."
+          - label: "Logo"
+            name: "logo"
+            widget: "image"
+            required: false
+            hint: "Image should be a landscape"
