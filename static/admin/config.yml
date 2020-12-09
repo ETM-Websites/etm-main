@@ -22,6 +22,7 @@ collections:
       - label: "Link Title"
         name: "linktitle"
         widget: "string"
+        required: false
         hint: "Overwrite the title when linked to this page. Such as main or footer navigation menus."
       - label: "Summary"
         name: "summary"
@@ -32,7 +33,10 @@ collections:
         name: "image"
         widget: "image"
         required: false
-        hint: ""
+        hint: "Maximum filesize of 5MB."
+        media_library:
+          config:
+            max_file_size: 5000000 # in bytes, only for default media library
       - label: "Body"
         name: "body"
         widget: "markdown"

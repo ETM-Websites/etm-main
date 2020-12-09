@@ -1,0 +1,39 @@
+{{ $isFullcreen := .IsHome }}
+{{- if $isFullcreen -}}
+<div
+  class="grid min-h-screen place-content-center print:min-h-0 px-10 py-24 relative text-center text-white z-10"
+  style="font-size:1.333em;"
+>
+  <div class="max-w-screen-md mx-auto px-6 py-4 relative z-10">
+{{- else -}}
+<div>
+  <div class="mx-auto px-6" style="max-width: 72.5ch;">
+{{- end -}}
+    {{ $classes := "" }}
+    {{- if $isFullcreen -}}
+      {{ $classes = " mt-0" }}
+    {{- end -}}
+    <h1 class="mb-6{{ $classes }}">{{- .Title -}}</h1>
+    {{- with .Summary -}}
+      {{ $classes := "" }}
+      {{- if $isFullcreen -}}
+        {{ $classes = " mx-auto" }}
+      {{- end -}}
+      <p class="max-w-screen-sm{{ $classes }}">{{- . -}}</p>
+    {{- end -}}
+  </div>
+
+{{- with .Params.image -}}
+  {{- if $isFullcreen -}}
+  <div class="absolute w-full h-full top-0">
+  {{- else -}}
+  <div class="max-w-screen-lg mx-auto my-8">
+  {{- end -}}
+    {{ $classes := "" }}
+    {{- if $isFullcreen -}}
+      {{ $classes = "absolute h-full w-full object-cover" }}
+    {{- end -}}
+    {{- partial "image" (dict "src" . "alt" $.Page.Params.Title "class" $classes) -}}
+  </div>
+{{- end -}}
+</div>
