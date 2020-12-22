@@ -4,6 +4,11 @@
   "description": "Template for a Hugo website for Netlify hosting.",
   "repository": "https://github.com/ETM-Websites/hugo-netlify-template",
   "license": "MIT",
+  "scripts": {
+    "build": "hugo",
+    "netlify": "netlify-cms-proxy-server",
+    "serve": "hugo serve"
+  },
   "devDependencies": {
     "autoprefixer": "^10.0.2",
     "postcss": "^8.1.9",

@@ -1,16 +1,32 @@
-<footer class="bg-gray-50 border-t-2 mt-14 sm:mt-20">
-    <div class="max-w-screen-md mx-auto px-6 py-4">
-        <div>
-            {{- partial "contact-form" -}}
+<footer class="bg-gray-50 border-t-2 mt-14 sm:mt-20 text-gray-500 text-xs">
+    <div class="max-w-screen-md mx-auto px-6 pt-6 pb-8">
+        <div class="sm:flex justify-between">
+            <div>
+                <a href="/" class="block" style="max-width: 14rem;">
+                    {{- partial "logo" -}}
+                </a>
+            </div>
+            <div class="ml-auto mr-8">
+                <address class="not-italic">
+                    123 Address Rd<br/>
+                    City, ST 12345<br/>
+                    <a href="mailto:info@etmwebsites.com" class="inline-block font-normal mt-2 text-current">info@etmwebsites.com</a><br>
+                    <a href="tel:+15021234567" class="inline-block font-normal mt-2 text-current">(502) 123-4567</a>
+                </address>
+            </div>
+            <div>
+                <nav>
+                    <a href="#" class="text-current font-normal inline-block mb-1">About</a><br/>
+                    <a href="#" class="text-current font-normal inline-block mb-1">Contact Us</a><br/>
+                    <a href="#" class="text-current font-normal inline-block mb-1">Product</a><br/>
+                    <a href="#" class="text-current font-normal inline-block mb-1">Help</a><br/>
+                    <a href="#" class="text-current font-normal inline-block mb-1">Typography</a><br/>
+                </nav>
+            </div>
         </div>
-        <div class="mt-6">
-            <section class="text-center text-xs">{{ .Site.Title }} &copy; {{ dateFormat "2006" now }}</section>
-            <nav class="hidden">
-                <a href="{{ .Site.BaseURL }}">Latest Posts</a>
-                {{ if .Site.Params.facebook }}<a href="{{ .Site.Params.facebook }}" target="_blank" rel="noopener">Facebook</a>{{ end }}
-                {{ if .Site.Params.twitter }}<a href="{{ .Site.Params.twitter }}" target="_blank" rel="noopener">Twitter</a>{{ end }}
-                {{ if .Site.Params.github }}<a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">Github</a>{{ end }}
-            </nav>
+        <div class="mt-16 sm:flex items-center justify-between">
+            <span>{{ .Site.Title }} &copy; {{ dateFormat "2006" now }}</span>
+            {{ partial "social-links" }}
         </div>
     </div>
 </footer>

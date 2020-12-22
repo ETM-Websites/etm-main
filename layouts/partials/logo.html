@@ -1,0 +1,9 @@
+{{ $class := .class }}
+{{ with ((site.GetPage "section" "settings").Resources.GetMatch "identity.md") }}
+  {{- if .Params.logo -}}
+    {{ $image := (site.GetPage "section" "media").Resources.GetMatch (strings.TrimPrefix "/media/" .Params.logo ) }}
+    <img class="{{ $class }}" src="{{ $image.RelPermalink }}" alt="{{ site.Title }}" />
+  {{- else -}}
+    <span class="block px-5 py-3">{{ site.Title }}</span>
+  {{- end -}}
+{{- end -}}

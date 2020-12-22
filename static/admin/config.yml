@@ -37,6 +37,15 @@ collections:
         media_library:
           config:
             max_file_size: 5000000 # in bytes, only for default media library
+      - label: "Call to Action"
+        name: "cta"
+        widget: "relation"
+        collection: "page"
+        search_fields: ["title"]
+        value_field: "{{slug}}"
+        display_fields: ["title"]
+        required: false
+        hint: "Select a page for menu prominence"
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -99,3 +108,43 @@ collections:
             widget: "image"
             required: false
             hint: "Image should be a landscape"
+      - name: "socials"
+        file: "content/settings/socials.md"
+        label: "Social Media"
+        fields:
+          - label: "Facebook"
+            name: "facebook"
+            widget: "string"
+            required: false
+            hint: "Full link to your Facebook page"
+          - label: "Twitter"
+            name: "twitter"
+            widget: "string"
+            required: false
+            hint: "Full link to your Twitter profile"
+          - label: "LinkedIn"
+            name: "linkedin"
+            widget: "string"
+            required: false
+            hint: "Full link to your LinkedIn page"
+          - label: "Instagram"
+            name: "instagram"
+            widget: "string"
+            required: false
+            hint: "Full link to your Instagram profile"
+          - label: "YouTube"
+            name: "youtube"
+            widget: "string"
+            required: false
+            hint: "Full link to your YouTube channel"
+          - label: "Vimeo"
+            name: "vimeo"
+            widget: "string"
+            required: false
+            hint: "Full link to your Vimeo page"
+          - label: "Slack"
+            name: "slack"
+            widget: "string"
+            required: false
+            hint: "Full link to your Slack group, for public access"
+        

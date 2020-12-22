@@ -11,7 +11,7 @@
 {{- end -}}
     {{ $classes := "" }}
     {{- if $isFullcreen -}}
-      {{ $classes = " mt-0" }}
+      {{ $classes = " mt-4" }}
     {{- end -}}
     <h1 class="mb-6{{ $classes }}">{{- .Title -}}</h1>
     {{- with .Summary -}}
@@ -21,6 +21,14 @@
       {{- end -}}
       <p class="max-w-screen-sm{{ $classes }}">{{- . -}}</p>
     {{- end -}}
+
+    {{ with .Params.cta }}        
+      {{ with (site.GetPage .) }}
+        <a href="{{ .RelPermalink }}" class="btn btn-primary mt-2 sm:ml-2 sm:mt-0 text-base">
+          {{- .LinkTitle -}}
+        </a>
+      {{ end }}
+    {{ end }}
   </div>
 
 {{- with .Params.image -}}
@@ -29,7 +37,7 @@
   {{- else -}}
   <div class="max-w-screen-lg mx-auto my-8">
   {{- end -}}
-    {{ $classes := "" }}
+    {{ $classes := "w-full" }}
     {{- if $isFullcreen -}}
       {{ $classes = "absolute h-full w-full object-cover" }}
     {{- end -}}

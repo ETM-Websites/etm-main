@@ -2,17 +2,8 @@
 <header class="fixed print:absolute px-4 w-full z-40 top-4 sm:top-6">
   <div class="bg-white flex items-center justify-between max-w-screen-md mx-auto rounded shadow">
     <div>
-      <a href="/">
-        {{- if $.Site.Params.logo -}}
-          <img src="{{ $.Site.Params.logo }}" alt="{{ .Site.Title }}" />
-        {{- else -}}
-          <span class="block" style="width: 10rem;">
-            {{ readFile "content/media/logo.svg" | safeHTML }}
-          </span>
-          <span class="sr-only">
-            {{- $.Site.Title -}}
-          </span>
-        {{- end -}}
+      <a href="/" class="block" style="max-width: 12rem;">
+        {{- partial "logo" (dict "class" "max-h-12") -}}
       </a>
       {{- if $.Site.Params.description -}}
         <span>{{ $.Site.Params.description }}</span>
