@@ -1,32 +1,26 @@
 <footer class="bg-gray-50 border-t-2 mt-14 sm:mt-20 text-gray-500 text-xs">
-    <div class="max-w-screen-md mx-auto px-6 pt-6 pb-8">
-        <div class="sm:flex justify-between">
+    <div class="text-center max-w-screen-md mx-auto px-6 pt-6 pb-8">
+        <div class="sm:flex justify-between items-center">
             <div>
-                <a href="/" class="block" style="max-width: 14rem;">
+                <a href="/" class="inline-block" style="max-width: 14rem; margin-left: -1rem;">
                     {{- partial "logo" -}}
                 </a>
             </div>
-            <div class="ml-auto mr-8">
-                <address class="not-italic">
-                    123 Address Rd<br/>
-                    City, ST 12345<br/>
-                    <a href="mailto:info@etmwebsites.com" class="inline-block font-normal mt-2 text-current">info@etmwebsites.com</a><br>
-                    <a href="tel:+15021234567" class="inline-block font-normal mt-2 text-current">(502) 123-4567</a>
-                </address>
-            </div>
-            <div>
+            <div class="ml-auto my-4">
                 <nav>
-                    <a href="#" class="text-current font-normal inline-block mb-1">About</a><br/>
-                    <a href="#" class="text-current font-normal inline-block mb-1">Contact Us</a><br/>
-                    <a href="#" class="text-current font-normal inline-block mb-1">Product</a><br/>
-                    <a href="#" class="text-current font-normal inline-block mb-1">Help</a><br/>
-                    <a href="#" class="text-current font-normal inline-block mb-1">Typography</a><br/>
+                    <a href="#" class="text-current font-normal inline-block mb-1 ml-4">About</a>
+                    <a href="#" class="text-current font-normal inline-block mb-1 ml-4">Contact Us</a>
+                    <a href="#" class="text-current font-normal inline-block mb-1 ml-4">Product</a>
+                    <a href="#" class="text-current font-normal inline-block mb-1 ml-4">Help</a>
+                    <a href="#" class="text-current font-normal inline-block mb-1 ml-4">Typography</a>
                 </nav>
             </div>
         </div>
-        <div class="mt-16 sm:flex items-center justify-between">
-            <span>{{ .Site.Title }} &copy; {{ dateFormat "2006" now }}</span>
-            {{ partial "social-links" }}
+        <div class="mt-10 text-center sm:flex items-center justify-between">
+            <span>&copy; {{ dateFormat "2006" now }} {{ .Site.Title }}. All rights reserved.</span>
+            <div class="mt-4">
+                {{- partial "social-links" -}}
+            </div>
         </div>
     </div>
 </footer>
