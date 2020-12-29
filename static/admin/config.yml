@@ -54,6 +54,20 @@ collections:
     editor:
       preview: false
     files:
+      - name: "identity"
+        file: "content/settings/identity.md"
+        label: "Identity"
+        fields:
+          - label: "Favicon"
+            name: "favicon"
+            widget: "image"
+            required: false
+            hint: "A favicon is a small square icon displayed in a browser tab for easy identification. Image should be a transparent square png that's at least 270x270."
+          - label: "Logo"
+            name: "logo"
+            widget: "image"
+            required: false
+            hint: "Image should be a landscape"
       - name: "main-navigation"
         file: "content/settings/main-navigation.md"
         label: "Main Navigation"
@@ -94,20 +108,37 @@ collections:
             display_fields: ["title"]
             required: false
             hint: "Select a page for menu prominence"
-      - name: "identity"
-        file: "content/settings/identity.md"
-        label: "Identity"
+      - name: "footer-navigation"
+        file: "content/settings/footer-navigation.md"
+        label: "Footer Navigation"
         fields:
-          - label: "Favicon"
-            name: "favicon"
-            widget: "image"
-            required: false
-            hint: "A favicon is a small square icon displayed in a browser tab for easy identification. Image should be a transparent square png that's at least 270x270."
-          - label: "Logo"
-            name: "logo"
-            widget: "image"
-            required: false
-            hint: "Image should be a landscape"
+          - label: "Menu"
+            name: "menu"
+            widget: "list"
+            default: []
+            label_singular: "Menu"
+            summary: "linktitle"
+            types:
+              - label: 'Page'
+                name: 'page'
+                widget: object
+                summary: '{{ fields.linktitle }}'
+                fields:
+                  - label: "Page"
+                    name: "page"
+                    widget: "relation"
+                    collection: "page"
+                    search_fields: ["title"]
+                    value_field: "{{slug}}"
+                    display_fields: ["title"]
+              - label: 'Custom Link'
+                name: 'custom'
+                widget: object
+                summary: '{{ fields.linktitle }}'
+                fields:
+                  - { label: "Title", name: "linktitle", widget: "string" }
+                  - { label: "Url", name: "url", widget: "string" }
+                  - { label: "Open in New Window", name: "external", widget: "boolean", default: true }
       - name: "socials"
         file: "content/settings/socials.md"
         label: "Social Media"
@@ -147,4 +178,12 @@ collections:
             widget: "string"
             required: false
             hint: "Full link to your Slack group, for public access"
-        
+      - name: "globals"
+        file: "content/settings/globals.md"
+        label: "Globals"
+        fields:
+          - label: "Include Identity Widget"
+            name: "netlifycms_identity_widget"
+            widget: "boolean"
+            default: true
+            hint: "This includes the Netlify CMS Identity Widget on the homepage to allow new users to register. It's recommended to disable this once all users are registered to improve performance as the CMS is accessible from /admin."

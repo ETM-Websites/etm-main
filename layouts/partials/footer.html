@@ -7,25 +7,22 @@
                 </a>
             </div>
             <div class="ml-auto my-4">
-                <nav>
-                    <a href="#" class="text-current font-normal inline-block mb-1 ml-4">About</a>
-                    <a href="#" class="text-current font-normal inline-block mb-1 ml-4">Contact Us</a>
-                    <a href="#" class="text-current font-normal inline-block mb-1 ml-4">Product</a>
-                    <a href="#" class="text-current font-normal inline-block mb-1 ml-4">Help</a>
-                    <a href="#" class="text-current font-normal inline-block mb-1 ml-4">Typography</a>
-                </nav>
+                {{- partial "footer-navigation" -}}
             </div>
         </div>
-        <div class="mt-10 text-center sm:flex items-center justify-between">
+        <div class="mt-8 text-center sm:flex items-center justify-between">
             <span>&copy; {{ dateFormat "2006" now }} {{ .Site.Title }}. All rights reserved.</span>
-            <div class="mt-4">
+            <div class="my-4">
                 {{- partial "social-links" -}}
             </div>
         </div>
     </div>
 </footer>
 
-{{/*  TODO: Add site setting  */}}
 {{- if .IsHome -}}
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    {{- with ((site.GetPage "section" "settings").Resources.GetMatch "globals.md") -}}
+        {{- if (.Params.netlifycms_identity_widget | default true) -}}
+            <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        {{- end -}}
+    {{- end -}}
 {{- end -}}
