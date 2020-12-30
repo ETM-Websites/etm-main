@@ -9,14 +9,14 @@
     <article class="sm:flex">
       {{- if .Params.image -}}
         <div class="flex-1 mr-4">
-          {{- partial "image" (dict "src" .Params.image "alt" .Title "class" "") -}}
+          {{- partial "image" (dict "src" .Params.image "alt" .Title "loading" "lazy" "class" "") -}}
         </div>
       {{- end -}}
       <div class="flex-1">
         <div class="max-w-lg mr-auto p-6">
           <h2 class="sm:mt-0"><a href="{{.Permalink}}" class="font-extrabold">{{.Title}}</a></h2>
           <p>{{ .Summary }}</p>
-          <a href="{{.Permalink}}" class="btn btn-primary mt-4 text-sm">Read More</a>
+          <a href="{{.Permalink}}" class="btn btn-primary mt-4 text-sm">View Page</a>
         </div>
       </div>
     </article>
