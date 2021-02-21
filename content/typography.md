@@ -1,12 +1,14 @@
 ---
 title: Sample Post of Typography Elements
 linktitle: Typography
-date: 2020-10-17T16:46:11.047Z
+hero:
+  image: /media/mathijs-delva-qusxjo_d4lu-unsplash.jpg
 summary: Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
   Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor.
-image: /media/nighthawk-bobs-burgers.jpg
 ---
 Quis suae urbis conservatorem Codrum, quis Erechthei *italic text* filiasnon maxime laudat? De vacuitate doloris eadem sententia erit.
+
+{{< youtube BZprZgv2qtQ >}}
 
 Primum in **bold text** est, quid meminerimus? Collige omnia, quae soletis: [inline link](#). Nihil opus est exemplis hoc facere longius. Duarum enim vitarum nobis erunt instituta capienda. Quid igitur, inquit, eos responsuros putas? Summum a vobis bonum voluptas dicitur. Sed haec omittamus; Quid, cum fictas fabulas, e quibus utilitas nulla elici potest, cum voluptate legimus?
 
@@ -38,6 +40,8 @@ Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehic
 Cras mattis consectetur purus sit amet fermentum.
 
 Praesent commodo cursus magna, [external link](https://google.com) vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+
+![](/media/andreas-gucklhorn-mawu2pojwfu-unsplash.jpg)
 
 Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
 

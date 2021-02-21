@@ -27,7 +27,7 @@
 <meta name="twitter:url" content="{{ .Permalink }}" />
 
 <!-- Images -->
-{{ with .Params.image }}
+{{ with .Params.hero.image }}
   <!-- TODO: Provide Fallback Image Setting -->
   {{ $image := (site.GetPage "section" "media").Resources.GetMatch (strings.TrimPrefix "/media/" . ) }}
   {{ $src := $image.Permalink }}

@@ -2,12 +2,12 @@
 {{- if $isFullcreen -}}
 <div
   class="grid min-h-screen place-content-center print:min-h-0 px-10 py-24 relative text-center text-white z-10"
-  style="font-size:1.333em;"
+  style="font-size:1.333em;min-height:calc(100vh - 3rem);"
 >
   <div class="max-w-screen-md mx-auto px-6 py-4 relative z-10">
 {{- else -}}
 <div>
-  <div class="mx-auto px-6" style="max-width: 72.5ch;">
+  <div class="mx-auto px-6 max-w-ch">
 {{- end -}}
     {{ $classes := "" }}
     {{- if $isFullcreen -}}
@@ -22,7 +22,7 @@
       <p class="max-w-screen-sm{{ $classes }}">{{- . -}}</p>
     {{- end -}}
 
-    {{ with .Params.cta }}        
+    {{ with .Params.hero.cta }}        
       {{ with (site.GetPage .) }}
         <a href="{{ .RelPermalink }}" class="btn btn-primary mt-2 sm:ml-2 sm:mt-0 text-base">
           {{- .LinkTitle -}}
@@ -31,7 +31,7 @@
     {{ end }}
   </div>
 
-{{- with .Params.image -}}
+{{- with .Params.hero.image -}}
   {{- if $isFullcreen -}}
   <div class="absolute w-full h-full top-0">
   {{- else -}}

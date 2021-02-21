@@ -4,7 +4,8 @@ summary: Testing the limits of building websites that are both high performing
   and easy to maintain. ETM Websites are cheap in price, but not in quality.
   Customers receive a bonafide high performing, component-driven, customizable
   site for $5,000. Content and asset creation is an additional fee.
-image: /media/light-bulbs.jpg
+hero:
+  image: /media/light-bulbs.jpg
 ---
 # High Performing and Easy to Maintain
 

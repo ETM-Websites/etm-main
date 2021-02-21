@@ -1,5 +1,5 @@
-<footer class="bg-gray-50 border-t-2 mt-14 sm:mt-20 text-gray-500 text-xs">
-    <div class="text-center max-w-screen-md mx-auto px-6 pt-6 pb-8">
+<footer class="bg-gray-50 border-t-2 mt-24 text-gray-500 text-xs">
+    <div class="text-center max-w-screen-md mx-auto p-6">
         <div class="sm:flex justify-between items-center">
             <div>
                 <a href="/" class="inline-block" style="max-width: 14rem; margin-left: -1rem;">
@@ -10,7 +10,7 @@
                 {{- partial "footer-navigation" -}}
             </div>
         </div>
-        <div class="mt-8 text-center sm:flex items-center justify-between">
+        <div class="text-center sm:flex items-center justify-between">
             <span>&copy; {{ dateFormat "2006" now }} {{ .Site.Title }}. All rights reserved.</span>
             <div class="my-4">
                 {{- partial "social-links" -}}

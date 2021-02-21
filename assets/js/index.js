@@ -1,13 +1,17 @@
+// Function to check if a 
 function checkHiddenSummaries() {
   document.querySelectorAll('summary').forEach((el) => {
+    // get computed styles of <summary>
     const computedStyles = window.getComputedStyle(el);
-    const details = el.parentElement;
+    // expand <details> if <summary> is hidden
     if (computedStyles.display === 'none') {
-      details.setAttribute('open', '');
-    } else {
-      if (!details.contains(document.activeElement)) {
-        details.removeAttribute('open');
-      }
+      el.parentElement.setAttribute('open', '');
+      return;
+    }
+
+    // ensure <details> collapses when resized & not active
+    if (!el.parentElement.contains(document.activeElement)) {
+      el.parentElement.removeAttribute('open');
     }
   });
 }
@@ -21,3 +25,6 @@ document.addEventListener('readystatechange', () => {
 });
 
 window.onresize = checkHiddenSummaries;
+
+// Run summary 
+checkHiddenSummaries();

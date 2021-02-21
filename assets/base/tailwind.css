@@ -49,6 +49,8 @@
     border-width: 0; /* 2 */
     border-style: solid; /* 2 */
     border-color: #e2e8f0; /* 2 */
+    min-width: 0vw; /* Safari hack for fluid typography */
+    will-change: min-width; /* Safari hack support */
   }
   
   /**
@@ -76,9 +78,6 @@
 
   img {
     border-style: solid;
-    position: relative;
-    -webkit-transform:translate3d(0,0,0);
-    z-index: 1;
   }
   
   textarea {

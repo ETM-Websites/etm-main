@@ -47,4 +47,4 @@ A sitemap & basic meta tags are a must. Accessibility, responsiveness & performa
 
 ## Browser Support
 
-Modern browsers. A banner can be displayed for IE showing *“this site may not function properly”* but not testing and debugging IE. 
+Modern browsers. A banner can be displayed for IE showing *“this site may not function properly”* but not testing and debugging IE.

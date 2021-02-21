@@ -24,31 +24,42 @@ collections:
         widget: "string"
         required: false
         hint: "Overwrite the title when linked to this page. Such as main or footer navigation menus."
+      - label: "Hero"
+        name: "hero"
+        widget: "object"
+        collapsed: true
+        hint: "Hero content"
+        fields:
+          - label: "Image"
+            name: "image"
+            widget: "image"
+            required: false
+            hint: "Maximum filesize of 5MB."
+            media_library:
+              config:
+                max_file_size: 5000000 # in bytes, only for default media library
+          - label: "Description"
+            name: "description"
+            widget: "text"
+            required: false
+            hint: "Uses the summary field if nothing is provided."
+          - label: "Call to Action"
+            name: "cta"
+            widget: "relation"
+            collection: "page"
+            search_fields: ["title"]
+            value_field: "{{slug}}"
+            display_fields: ["title"]
+            required: false
+            hint: "Select a page for menu prominence"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
       - label: "Summary"
         name: "summary"
         widget: "text"
         required: false
         hint: "Provide a snippet for SEO & social meta tags information. If nothing is provided it will use the first 70 words of the content."
-      - label: "Image"
-        name: "image"
-        widget: "image"
-        required: false
-        hint: "Maximum filesize of 5MB."
-        media_library:
-          config:
-            max_file_size: 5000000 # in bytes, only for default media library
-      - label: "Call to Action"
-        name: "cta"
-        widget: "relation"
-        collection: "page"
-        search_fields: ["title"]
-        value_field: "{{slug}}"
-        display_fields: ["title"]
-        required: false
-        hint: "Select a page for menu prominence"
-      - label: "Body"
-        name: "body"
-        widget: "markdown"
   - name: "settings" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Settings" # Used in the UI, ie.: "New Post"
     editor:

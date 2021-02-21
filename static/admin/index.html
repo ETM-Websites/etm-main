@@ -15,6 +15,52 @@
       // get production css for netlify preview
       CMS.registerPreviewStyle(localStorage.getItem('netlify-cms-preview-css'));
     }
+
+    // Youtube
+    CMS.registerEditorComponent({
+      id: "youtube",
+      label: "Youtube",
+      fields: [{
+        name: "id",
+        label: "YouTube Video ID",
+        widget: "string",
+      }],
+      pattern: /{{< youtube ([a-zA-Z0-9]+) >}}/,
+      fromBlock: function(match) {
+        return {
+          id: match[1],
+        };
+      },
+      toBlock: function(obj) {
+        return `{{< youtube ${obj.id} >}}`;
+      },
+      toPreview: function(obj) {
+        return `<img src="http://img.youtube.com/vi/${obj.id}/maxresdefault.jpg" alt="Youtube Video" />`;
+      },
+    });
+
+    // Vimeo
+    CMS.registerEditorComponent({
+      id: "vimeo",
+      label: "Vimeo",
+      fields: [{
+        name: "shortcode",
+        label: "Vimeo shortcode",
+        widget: "string"
+      }],
+      pattern: /{{< vimeo ([a-zA-Z0-9]+) >}}/,
+      fromBlock: function(match) {
+        return {
+          shortcode: match[1]
+        };
+      },
+      toBlock: function(obj) {
+        return `{{< vimeo ${obj.shortcode} >}}`;
+      },
+      toPreview: function(obj) {
+        return `{{< vimeo ${obj.shortcode} >}}`;
+      },
+  });
   </script>
 </body>
 </html>

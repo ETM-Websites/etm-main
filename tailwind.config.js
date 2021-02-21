@@ -30,9 +30,12 @@ module.exports = {
           900: '#253C14',
         },
       },
+      maxWidth: {
+        ch: '72ch'
+      },
       screens: {
         'print': { 'raw': 'print' },
-      }
+      },
     },
     screens: {
       sm: `${640/16}rem`, // => @media (min-width: 40rem) { ... }
