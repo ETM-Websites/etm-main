@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
     {{- partial "head" . -}}
-    <body class="{{ block "body_class" . }} {{ end }}">
+    <body class="flex flex-col min-h-screen">
         {{- partial "header" . -}}
-        <main>
+        <main class="mb-auto">
             {{- block "main" . }}{{- end }}
         </main>
         {{- partial "footer" . -}}

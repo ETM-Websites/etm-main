@@ -1,7 +1,7 @@
 {{ $isFullcreen := .IsHome }}
 {{- if $isFullcreen -}}
 <div
-  class="grid min-h-screen place-content-center print:min-h-0 px-10 py-24 relative text-center text-white z-10"
+  class="bg-gray-100 grid min-h-screen place-content-center print:min-h-0 px-10 py-24 relative text-center text-white z-10"
   style="font-size:1.333em;min-height:calc(100vh - 3rem);"
 >
   <div class="max-w-screen-md mx-auto px-6 py-4 relative z-10">
@@ -13,8 +13,10 @@
     {{- if $isFullcreen -}}
       {{ $classes = " mt-4" }}
     {{- end -}}
+    
     <h1 class="mb-6{{ $classes }}">{{- .Title -}}</h1>
-    {{- with .Summary -}}
+
+    {{- with .Params.hero.description -}}
       {{ $classes := "" }}
       {{- if $isFullcreen -}}
         {{ $classes = " mx-auto" }}
@@ -35,7 +37,7 @@
   {{- if $isFullcreen -}}
   <div class="absolute w-full h-full top-0">
   {{- else -}}
-  <div class="max-w-screen-lg mx-auto my-8">
+  <div class="max-w-screen-lg mx-auto my-12">
   {{- end -}}
     {{ $classes := "w-full" }}
     {{- if $isFullcreen -}}

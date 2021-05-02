@@ -3,6 +3,7 @@ title: Sample Post of Typography Elements
 linktitle: Typography
 hero:
   image: /media/mathijs-delva-qusxjo_d4lu-unsplash.jpg
+  description: Duarum enim vitarum nobis erunt instituta capienda.
 summary: Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
   Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor.
 ---

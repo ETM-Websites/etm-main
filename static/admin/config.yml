@@ -12,9 +12,18 @@ collections:
   - name: "page" # Used in routes, ie.: /admin/collections/:slug/edit
     create: true # Allow users to create new documents in this collection
     folder: "content" # The path to the folder where the documents are stored
+    filter: { field: "section", value: "page" }
     label: "Pages" # Used in the UI, ie.: "New Post"
     label_singular: "Page"
+    # adding a nested object will show the collection folder structure
+    nested:
+      depth: 100 # max depth to show in the collection tree
+      summary: '{{ title }}' # optional summary for a tree node, defaults to the inferred title field
+    # adding a meta object with a path property allows editing the path of entries
+    # moving an existing entry will move the entire sub tree of the entry to the new location
+    meta: { path: { widget: string, label: 'Path', index_file: 'index', default: '/' } }
     fields: # The fields each document in this collection have
+      - { name: "section", widget: "hidden", default: "page" }
       - label: "Title"
         name: "title"
         widget: "string"
@@ -42,7 +51,6 @@ collections:
             name: "description"
             widget: "text"
             required: false
-            hint: "Uses the summary field if nothing is provided."
           - label: "Call to Action"
             name: "cta"
             widget: "relation"
@@ -198,3 +206,10 @@ collections:
             widget: "boolean"
             default: true
             hint: "This includes the Netlify CMS Identity Widget on the homepage to allow new users to register. It's recommended to disable this once all users are registered to improve performance as the CMS is accessible from /admin."
+      - name: "config"
+        file: "config.toml"
+        label: "Config"
+        fields:
+          - label: "Title"
+            name: title
+            widget: "string"

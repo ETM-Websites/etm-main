@@ -4,7 +4,7 @@ menu:
   - type: page
     page: about
   - type: page
-    page: typography
+    page: docs/typography
   - type: page
     page: content-test
   - type: custom

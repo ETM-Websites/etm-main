@@ -14,11 +14,15 @@ html {
 }
 
 pre {
+  @apply text-gray-800;
   background-color: whitesmoke;
   padding: 1rem;
   max-width: 100%;
   overflow: hidden;
+  text-align: left;
   white-space: pre-wrap;
+  font-size: 13px;
+  z-index: 999;
 }
 
 svg {
