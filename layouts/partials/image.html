@@ -13,12 +13,13 @@
 {{ $src := $image.RelPermalink }}
 
 {{/*  Define base size for multiplier  */}}
-{{ $base := 420 }}
+{{ $base := 320 }}
 
 {{/*  Define empty srcset array to be joined in the render  */}}
 {{ $srcset := slice }}
 
-{{ $levels := 4 }}
+{{/*  Maximum levels by default ( 8 = 2560 )  */}}
+{{ $levels := 8 }}
 
 {{ if .levels }}
   {{ $levels = .levels }}

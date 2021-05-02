@@ -1,5 +1,6 @@
 ---
 title: New Client Onboarding
+section: page
 ---
 ## [GitHub](https://github.com/)
 

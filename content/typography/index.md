@@ -1,5 +1,6 @@
 ---
 title: Sample Post of Typography Elements
+section: page
 linktitle: Typography
 hero:
   image: /media/mathijs-delva-qusxjo_d4lu-unsplash.jpg

@@ -6,6 +6,7 @@ summary: Testing the limits of building websites that are both high performing
   site for $5,000. Content and asset creation is an additional fee.
 hero:
   image: /media/light-bulbs.jpg
+section: page
 ---
 # High Performing and Easy to Maintain
 

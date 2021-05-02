@@ -1,5 +1,6 @@
 ---
 title: Technical Overview
+section: page
 ---
 ## Strategy
 
