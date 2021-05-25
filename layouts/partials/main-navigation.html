@@ -1,10 +1,10 @@
-<details class="relative print:hidden">
+<details class="sm:relative print:hidden">
   <summary class="sm:hidden hide-marker px-4 py-2">
     <span class="icon mr-1 text-lg inline-block open:hidden">{{- partial "icons/navigation/menu.svg" -}}</span>
     <span class="icon mr-1 text-lg hidden open:inline-block">{{- partial "icons/navigation/close.svg" -}}</span>
     Menu
   </summary>
-  <nav class="-mt-1 sm:mt-0 absolute sm:relative bg-white border-2 sm:border-0 mr-1.5 sm:mr-0 py-2 sm:py-0 right-0 rounded-md shadow sm:shadow-none sm:text-sm lg:text-xs px-2">
+  <nav class="absolute bg-white h-screen left-0 lg:text-xs px-3 py-2 right-0 sm:h-auto sm:py-0 sm:relative sm:text-sm sm:top-auto top-full">
     {{ $currentPage := . }}
     {{- with ((site.GetPage "section" "settings").Resources.GetMatch "main-navigation.md") -}}
       {{ $classes := "block sm:inline-block py-2" }}
