@@ -49,8 +49,14 @@
     border-width: 0; /* 2 */
     border-style: solid; /* 2 */
     border-color: #e2e8f0; /* 2 */
-    min-width: 0vw; /* Safari hack for fluid typography */
-    will-change: min-width; /* Safari hack support */
+  }
+
+  /* Safari Only Query */
+  @media not all and (min-resolution:.001dpcm) { 
+    html {
+      -webkit-marquee-increment: 0vw; /* Safari hack for fluid typography */
+      will-change: -webkit-marquee-increment; /* Safari hack support */
+    }
   }
   
   /**
