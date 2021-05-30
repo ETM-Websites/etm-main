@@ -40,7 +40,7 @@ svg {
 .hero {
   &.is-fullscreen {
     font-size: 1.333em;
-    min-height: -webkit-fill-available;
+    min-height: calc(100vh - 6rem);
     
     @screen sm {
       min-height: calc(100vh - 3rem);
