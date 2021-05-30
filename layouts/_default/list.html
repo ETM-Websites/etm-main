@@ -8,12 +8,12 @@
   {{ range .Pages }}
     {{- if .Params.hero.image -}}
       <article class="mx-auto max-w-screen-lg sm:flex">
-        <div class="mr-4" style="flex:3">
+        <div class="sm:mr-4" style="flex:3">
           {{- partial "image" (dict "src" .Params.hero.image "alt" .Title "loading" "lazy" "class" "") -}}
         </div>
         <div class="flex-1" style="flex:2">
           <div class="max-w-lg mr-auto p-6">
-            <h2 class="sm:mt-0"><a href="{{.Permalink}}" class="font-extrabold">{{.Title}}</a></h2>
+            <h2 class="mt-4 sm:mt-0"><a href="{{.Permalink}}" class="font-extrabold">{{.Title}}</a></h2>
             <p>{{ .Summary }}</p>
             <a href="{{.Permalink}}" class="btn btn-primary mt-4 text-sm">View Page</a>
           </div>
