@@ -25,6 +25,13 @@ pre {
   z-index: 999;
 }
 
+pre pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 svg {
   fill: currentColor;
 }

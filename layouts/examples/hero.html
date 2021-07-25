@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+{{ with .Content }}
+<div class="max-w-ch mx-auto px-6">
+  {{- . -}}
+</div>
+{{ end }}
+
+{{/*  Default Hero  */}}
+{{- partial "hero" . -}}
+
+<pre class="text-center font-bold text-base">Split-Screen</pre>
+
+{{/*  Split-Screen Hero  */}}
+{{ $params := dict "hero" (dict "type" "split") "title" "Split Hero Example" }}
+{{- partial "hero" (dict "Params" (merge .Params $params)) -}}
+
+<pre class="text-center font-bold text-base">Billboard</pre>
+
+{{/*  Billboard Hero  */}}
+{{ $params := dict "hero" (dict "type" "billboard") "title" "Billboard Hero Example" }}
+{{- partial "hero" (dict "Params" (merge .Params $params)) -}}
+
+<pre class="text-center font-bold text-base">Fullscreen</pre>
+
+{{/*  Fullscreen Hero  */}}
+{{ $params := dict "hero" (dict "type" "fullscreen") "title" "Fullscreen Hero Example" }}
+{{- partial "hero" (dict "Params" (merge .Params $params)) -}}
+
+{{ end }}

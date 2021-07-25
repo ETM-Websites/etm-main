@@ -14,6 +14,7 @@
     CMS.registerWidget('parent', parentWidget.control, parentWidget.preview);
     
     CMS.registerPreviewStyle('body { padding-left: 1.5rem; padding-right: 1.75rem; }', { raw: true });
+    
     if (localStorage.getItem('netlify-cms-preview-css') != null) {
       // get production css for netlify preview
       CMS.registerPreviewStyle(localStorage.getItem('netlify-cms-preview-css'));

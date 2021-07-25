@@ -1,5 +1,6 @@
 ---
 title: "Contact"
+section: page
 summary: "Lorem est tota propiore conpellat pectoribus de pectora summo."
 ---
 
