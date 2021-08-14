@@ -52,5 +52,10 @@
   {{- end -}}
   {{- if gt (len $srcset) 0 -}}
     srcset="{{ delimit $srcset ", " }}"
+    {{- if .sizes -}}
+      sizes="{{ .sizes }}"
+    {{- else -}}
+      sizes="100vw"
+    {{- end -}}
   {{- end -}}
 />
