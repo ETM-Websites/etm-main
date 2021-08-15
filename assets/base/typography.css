@@ -37,7 +37,8 @@ html {
   }
 }
 
-::selection {
+::selection,
+::-moz-selection {
   @apply bg-primary-300;
 }
 

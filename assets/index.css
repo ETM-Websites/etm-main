@@ -44,16 +44,12 @@ svg {
   max-height: 100%;
 }
 
-.hero {
-  &.is-fullscreen {
-    min-height: 100vh;
-  }
+.hero--fullscreen {
+  min-height: 100vw;
 }
-    
+
 @screen sm {
-  .hero {
-    &.is-fullscreen {
-      min-height: calc(100vh - 3rem);
-    }
+  .hero--fullscreen {
+    min-height: calc(100vh - 3rem);
   }
 }
