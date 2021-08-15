@@ -31,7 +31,7 @@
   <div class="mx-auto px-6 {{ delimit $classList " " }}">
     {{ $classList := slice "" }}
     {{ if (eq $type "fullscreen") }}
-      {{ $classList = $classList | append "mt-4" "text-white" }}
+      {{ $classList = $classList | append "mt-4" "text-white" "sm:text-7xl" }}
     {{ else if (eq $type "billboard") }}
       {{ $classList = $classList | append "mt-4" "text-white" }}
     {{ else if (eq $type "split") }}

@@ -46,10 +46,13 @@ svg {
 
 .hero {
   &.is-fullscreen {
-    font-size: 1.333em;
-    min-height: calc(100vh - 6rem);
+    min-height: 100vh;
+  }
+}
     
-    @screen sm {
+@screen sm {
+  .hero {
+    &.is-fullscreen {
       min-height: calc(100vh - 3rem);
     }
   }
